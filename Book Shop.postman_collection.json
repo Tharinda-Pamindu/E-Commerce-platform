@@ -1,0 +1,569 @@
+{
+	"info": {
+		"_postman_id": "2faa1c31-d984-4bc8-ac6f-e2791a8cd66c",
+		"name": "Book Shop",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "28159712"
+	},
+	"item": [
+		{
+			"name": "Book",
+			"item": [
+				{
+					"name": "Add Book",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1c2VyMSIsImlhdCI6MTY5NDY1NDQ5NSwiZXhwIjoxNjk0NjU2Mjk1fQ.S-hygBMbt_-c3xrJRfeWeqOqg1ieOIBhmunjaacj8sg"
+							}
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"IT\",\r\n    \"quantity\": 15,\r\n    \"author\": \"Stephen King\",\r\n    \"description\": \"It is a 1986 horror novel by American author Stephen King. It was his 22nd book and his 17th novel written under his own name. The story follows the experiences of seven children as they are terrorized by an evil entity\",\r\n    \"unitPrice\": 2600.0,\r\n    \"coverImage\": null,\r\n    \"category\": {\r\n        \"id\": 153\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:9000/book"
+					},
+					"response": []
+				},
+				{
+					"name": "Get Book By ID",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1c2VyMyIsImlhdCI6MTY5NDQzMjEyNiwiZXhwIjoxNjk0NDMzOTI2fQ.oFtc6Sa9vql_Xkzz_fEEweIU5A0E9tYqXCKEXxFcj0U"
+							}
+						},
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:9000/book/1"
+					},
+					"response": []
+				},
+				{
+					"name": "Get all Books",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1c2VyMyIsImlhdCI6MTY5NDQ0ODYwMiwiZXhwIjoxNjk0NDUwNDAyfQ.nHAF8RXpU116_ndL1ELNDMdH4Sd0UMiMQq4kI9m4YjY"
+							}
+						},
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:9000/auth/book"
+					},
+					"response": []
+				},
+				{
+					"name": "Get Books By category ID",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:9000/auth/4"
+					},
+					"response": []
+				},
+				{
+					"name": "Update Book",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1c2VyMyIsImlhdCI6MTY5NDQ0OTYwNywiZXhwIjoxNjk0NDUxNDA3fQ.67AXvqrfhtwEUG-V9rTNldr4OTDUsjbljjwRfam5nWs"
+							}
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Hath Pana\",\r\n    \"quantity\": 20,\r\n    \"author\": \"Kumarathunga Munidasa\",\r\n    \"description\": \"Language : Sinhala | Binding: Soft Binding\",\r\n    \"unitPrice\": 180.0,\r\n    \"coverImage\": null,\r\n    \"category\": {\r\n        \"id\": 402,\r\n        \"title\": \"Short story\"\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:9000/book/1"
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Book",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1c2VyMyIsImlhdCI6MTY5NDQ0OTYwNywiZXhwIjoxNjk0NDUxNDA3fQ.67AXvqrfhtwEUG-V9rTNldr4OTDUsjbljjwRfam5nWs"
+							}
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": "http://localhost:9000/book/2"
+					},
+					"response": []
+				},
+				{
+					"name": "Add Cover Image",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1c2VyMyIsImlhdCI6MTY5NDQ0OTYwNywiZXhwIjoxNjk0NDUxNDA3fQ.67AXvqrfhtwEUG-V9rTNldr4OTDUsjbljjwRfam5nWs"
+							}
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "coverImage",
+									"type": "file",
+									"src": "/C:/Users/ASUS/Downloads/French-Crop-5.jpg"
+								}
+							]
+						},
+						"url": "http://localhost:9000/book/1/profile"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Category",
+			"item": [
+				{
+					"name": "Save Category",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1c2VyMSIsImlhdCI6MTY5NDM3MTEyMCwiZXhwIjoxNjk0MzcyOTIwfQ.73Eewot9rCw2t3heo0scyoz4fmb0brNrEr3OcYqcOHU"
+							}
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\":\"Thriller\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:9000/category/new"
+					},
+					"response": []
+				},
+				{
+					"name": "Get Category By ID",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "Get All Category",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1c2VyMSIsImlhdCI6MTY5NDQ1MTI5MSwiZXhwIjoxNjk0NDUzMDkxfQ.2aWjm7t9UBl1pY2XXM5luD4K24pt-j_ym-u8Od4aeew"
+							}
+						},
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:9000/category"
+					},
+					"response": []
+				},
+				{
+					"name": "Update Category",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1c2VyMSIsImlhdCI6MTY5NDQ1MzI3MCwiZXhwIjoxNjk0NDU1MDcwfQ.hjWEmgWx-yEpzld7-K7CVNXF4ygMehSTxN2Loi8Tcfc"
+							}
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:9000/category/3"
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Category",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1c2VyMSIsImlhdCI6MTY5NDQ1MzI3MCwiZXhwIjoxNjk0NDU1MDcwfQ.hjWEmgWx-yEpzld7-K7CVNXF4ygMehSTxN2Loi8Tcfc"
+							}
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": "http://localhost:9000/category/3"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "User",
+			"item": [
+				{
+					"name": "User Register",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\":\"user1\",\r\n    \"password\":\"1111\",\r\n    \"email\":\"user1@gmail.com\",\r\n    \"role\":\"ADMIN\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:9000/auth/register"
+					},
+					"response": [
+						{
+							"name": "User Register as USER",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"username\":\"user1\",\r\n    \"password\":\"1111\",\r\n    \"email\":\"user1@gmail.com\",\r\n    \"role\":\"ADMIN\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "http://localhost:9000/auth/register"
+							},
+							"_postman_previewlanguage": null,
+							"header": null,
+							"cookie": [],
+							"body": null
+						},
+						{
+							"name": "User Register as SELLER",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"username\":\"user1\",\r\n    \"password\":\"1111\",\r\n    \"email\":\"user1@gmail.com\",\r\n    \"role\":\"ADMIN\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "http://localhost:9000/auth/register"
+							},
+							"_postman_previewlanguage": null,
+							"header": null,
+							"cookie": [],
+							"body": null
+						}
+					]
+				},
+				{
+					"name": "User Login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\":\"user1\",\r\n    \"password\":\"1111\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:9000/auth/login"
+					},
+					"response": [
+						{
+							"name": "User Login as SELLER",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"username\":\"user1\",\r\n    \"password\":\"1111\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "http://localhost:9000/auth/login"
+							},
+							"_postman_previewlanguage": null,
+							"header": null,
+							"cookie": [],
+							"body": null
+						},
+						{
+							"name": "User Login as USER",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"username\":\"user1\",\r\n    \"password\":\"1111\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "http://localhost:9000/auth/login"
+							},
+							"_postman_previewlanguage": null,
+							"header": null,
+							"cookie": [],
+							"body": null
+						}
+					]
+				},
+				{
+					"name": "Get User using userID",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1c2VyMSIsImlhdCI6MTY5NDQ1MTI5MSwiZXhwIjoxNjk0NDUzMDkxfQ.2aWjm7t9UBl1pY2XXM5luD4K24pt-j_ym-u8Od4aeew"
+							}
+						},
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:9000/user/1"
+					},
+					"response": []
+				},
+				{
+					"name": "Update User",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1c2VyMSIsImlhdCI6MTY5NDQ1MTI5MSwiZXhwIjoxNjk0NDUzMDkxfQ.2aWjm7t9UBl1pY2XXM5luD4K24pt-j_ym-u8Od4aeew"
+							}
+						},
+						"method": "PUT",
+						"header": [],
+						"url": "http://localhost:9000/user/1"
+					},
+					"response": []
+				},
+				{
+					"name": "Update User Profile",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1c2VyMSIsImlhdCI6MTY5NDQ1MTI5MSwiZXhwIjoxNjk0NDUzMDkxfQ.2aWjm7t9UBl1pY2XXM5luD4K24pt-j_ym-u8Od4aeew"
+							}
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "profileImage",
+									"type": "file",
+									"src": "/C:/Users/ASUS/Downloads/French-Crop-5.jpg"
+								}
+							]
+						},
+						"url": "http://localhost:9000/user/1/profile"
+					},
+					"response": []
+				},
+				{
+					"name": "Forgot Password",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\":\"user24\",\r\n    \"email\":\"user2@gmail.com\",\r\n    \"password\":\"2222\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:9000/forgot/user"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Test",
+			"item": [
+				{
+					"name": "Test Controller",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1c2VyMSIsImlhdCI6MTY5NDM1Njg2NiwiZXhwIjoxNjk0MzU4NjY2fQ.v44CoofFhQYDEHwQQp9AqlurpX2sSerRxO6Wck22qRc"
+							}
+						},
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:9000/test"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Order",
+			"item": [
+				{
+					"name": "Get Order by OrderID",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1c2VyMSIsImlhdCI6MTY5NDgzNTIyNywiZXhwIjoxNjk0ODM3MDI3fQ.vcb53efrXoJwLfLUarblBqqKJxBbVbhI4SruNWBGjcE"
+							}
+						},
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:9000/order/32"
+					},
+					"response": []
+				},
+				{
+					"name": "Get All Orders",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1c2VyMSIsImlhdCI6MTY5NDgzNTIyNywiZXhwIjoxNjk0ODM3MDI3fQ.vcb53efrXoJwLfLUarblBqqKJxBbVbhI4SruNWBGjcE"
+							}
+						},
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:9000/order"
+					},
+					"response": []
+				},
+				{
+					"name": "Place Order",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1c2VyMSIsImlhdCI6MTY5NTQ1MzYyNSwiZXhwIjoxNjk1NDU1NDI1fQ.d-JzvtUWAyzv4OtHI4IkfrP-kTRnJxf2eqWJ1DDGXOw"
+							}
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"orderId\": 2,\r\n    \"price\": 1000.0,\r\n    \"user\": {\r\n        \"id\": 1,\r\n        \"username\": \"user1\",\r\n        \"email\": \"user1@gmail.com\",\r\n        \"password\": \"$2a$10$bIfScq9h4YysE/TYO6nE1eWN8mFC.IVSEjQrl7SgrcNbFwamHtb.y\",\r\n        \"role\": \"ADMIN\",\r\n        \"profileImage\": \"French-Crop-5.jpg\"\r\n    },\r\n    \"books\": [\r\n        {\r\n            \"id\": 3,\r\n            \"name\": \"The Diary of a Young Girl\",\r\n            \"quantity\": 10,\r\n            \"author\": \" Anne Fran\",\r\n            \"description\": \"The Diary of  a Young Girl, often referred to as The Diary of Anne Frank, is a book of the writings from the Dutch-language diary kept by Anne Frank while she was in hiding for two years with her family during the Nazi occupation of the Neherland\",\r\n            \"unitPrice\": 700.0,\r\n            \"coverImage\": \"images.jpeg\",\r\n            \"category\": {\r\n                \"id\": 4,\r\n                \"title\": \"Fantasy\"\r\n            },\r\n            \"orders\": []\r\n        }\r\n    ],\r\n    \"status\": \"pending\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:9000/order"
+					},
+					"response": []
+				},
+				{
+					"name": "Update Order Status",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1c2VyMSIsImlhdCI6MTY5NDgzNjg0MywiZXhwIjoxNjk0ODM4NjQzfQ.C4lzxInu6Ewq3mDwHmuWJars8xLTZFoNFwAi5ibCItk"
+							}
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"orderStatus\":\"Success\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:9000/order/15"
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Order",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1c2VyMSIsImlhdCI6MTY5NDgzNjg0MywiZXhwIjoxNjk0ODM4NjQzfQ.C4lzxInu6Ewq3mDwHmuWJars8xLTZFoNFwAi5ibCItk"
+							}
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": "http://localhost:9000/order/15"
+					},
+					"response": []
+				},
+				{
+					"name": "Get All Orders By using User ID",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1c2VyMSIsImlhdCI6MTY5NDgzNjg0MywiZXhwIjoxNjk0ODM4NjQzfQ.C4lzxInu6Ewq3mDwHmuWJars8xLTZFoNFwAi5ibCItk"
+							}
+						},
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:9000/order/1/orders"
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
